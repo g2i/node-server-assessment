@@ -2,8 +2,16 @@
   "name": "node-server-assessment",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "verify": "yarn workspace database build && yarn workspace reporter build && yarn workspace server verify"
+  },
   "workspaces": [
-    "database"
+    "database",
+    "reporter",
+    "server"
   ],
-  "packageManager": "yarn@3.0.0"
+  "packageManager": "yarn@3.0.0",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
 }

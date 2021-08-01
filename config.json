@@ -1,0 +1,3 @@
+{
+  "filesAllowedToChange": ["server/app.js", "server/package.json", "yarn.lock", ".yarn/"]
+}
