@@ -1,0 +1,9 @@
+{
+  "name": "node-server-assessment",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "database"
+  ],
+  "packageManager": "yarn@3.0.0"
+}

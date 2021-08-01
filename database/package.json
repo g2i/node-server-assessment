@@ -1,0 +1,7 @@
+{
+  "name": "database",
+  "packageManager": "yarn@3.0.0",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
