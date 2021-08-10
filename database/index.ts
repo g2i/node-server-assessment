@@ -6,15 +6,33 @@ const isNumber = (record: any): record is number => {
   return (typeof record === 'number');
 }
 
+/** Options for {@link Database.all} */
 export interface AllQueryOptions {
+  /** Limit the request to `limit` records */
   limit?: number;
+  /**
+   * Skip `offset` records in the query.
+   * To be used in conjunction with {@link AllQueryOptions.limit}
+   * to allow pagination.
+   */
   offset?: number;
 }
 
+/**
+ * A small in-memory database for movies.
+ * 
+ * @remarks
+ * 
+ * This database does not persist its data at all. If the process dies,
+ * so do your changes.
+ */
 export class Database {
   #data: Map<number, MovieRecord>;
   #maximumID: number = 0;
 
+  /**
+   * Uses the `movies.json` file to populate a database with some 28000 records.
+   */
   static createPreseededDatabase(): Database {
     const db = new Database();
     const movieText = fs.readFileSync(path.join(__dirname, 'movies.json'), { encoding: 'utf8' });
@@ -89,6 +107,11 @@ export class Database {
     this.#data.delete(id);
   }
 
+  /**
+   * Request a bunch of records. 
+   * @see {@link AllQueryOptions} for options
+   * @returns a list of records wrapped in a promise
+   */
   async all({ limit, offset }: AllQueryOptions = {}): Promise<MovieRecord[]> {
     const all = [];
     let selected = 0;
@@ -107,6 +130,12 @@ export class Database {
     return all;
   }
 
+  /**
+   * Requests a single movie from the database.
+   * @param id 
+   * @returns a promise that will resolve to the requested movie record,
+   * or reject with an error.
+   */
   async get(id: number): Promise<MovieRecord> {
     if (!this.#data.has(id)) {
       throw new Error('ID not found');

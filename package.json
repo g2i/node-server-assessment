@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "verify": "yarn workspace database build && yarn workspace reporter build && yarn workspace server verify"
+    "build": "yarn workspaces foreach run build",
+    "start": "yarn build && yarn workspace server start",
+    "verify": "yarn build && yarn workspace server verify"
   },
   "workspaces": [
     "database",
