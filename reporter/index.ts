@@ -1,10 +1,9 @@
 import { Reporter, DefaultReporter, Config, Context, AggregatedResult } from '@jest/reporters';
 
-// TODO - Bummer can't find types with PNP?  AggregatedResult["testResult"] 
 function buildSummary(results: AggregatedResult) {
   let summary: string[] = [];
-  results.testResults.forEach(({ testResults }: any) => 
-    testResults.forEach((result: any) => 
+  results.testResults.forEach(({ testResults }) => 
+    testResults.forEach((result) => 
       summary.push(`${result.status === 'passed' ? '✓' : '✕'} ${result.fullName}`
       )
     )
