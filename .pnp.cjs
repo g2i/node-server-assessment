@@ -27,10 +27,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:database"
       },
       {
-        "name": "reporter",
-        "reference": "workspace:reporter"
-      },
-      {
         "name": "server",
         "reference": "workspace:server"
       }
@@ -40,7 +36,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [
       ["database", ["workspace:database"]],
       ["node-server-assessment", ["workspace:."]],
-      ["reporter", ["workspace:reporter"]],
       ["server", ["workspace:server"]]
     ],
     "fallbackPool": [
@@ -1881,6 +1876,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/clean-stack-npm-2.2.0-a8ce435a5c-2ac8cd2b2f.zip/node_modules/clean-stack/",
           "packageDependencies": [
             ["clean-stack", "npm:2.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["cli-jest-reporter", [
+        ["https://github.com/g2i/cli-jest-reporter.git#commit=0e55a7f575b9f978cad1ae4c8394091718216801", {
+          "packageLocation": "./.yarn/cache/cli-jest-reporter-https-5cbf35588e-a6ee15954a.zip/node_modules/cli-jest-reporter/",
+          "packageDependencies": [
+            ["cli-jest-reporter", "https://github.com/g2i/cli-jest-reporter.git#commit=0e55a7f575b9f978cad1ae4c8394091718216801"]
           ],
           "linkType": "HARD",
         }]
@@ -4752,18 +4756,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["reporter", [
-        ["workspace:reporter", {
-          "packageLocation": "./reporter/",
-          "packageDependencies": [
-            ["reporter", "workspace:reporter"],
-            ["@jest/reporters", "virtual:44ddb97261909a18cea422936d086916617b479c8bfeb1749647055d23c401ffa8dc8125c738dd1c8de1af3668927513962b686040dfcb6e7572189c878dc00e#npm:27.0.6"],
-            ["@types/node", "npm:16.4.13"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
       ["require-directory", [
         ["npm:2.1.1", {
           "packageLocation": "./.yarn/cache/require-directory-npm-2.1.1-8608aee50b-fb47e70bf0.zip/node_modules/require-directory/",
@@ -4915,11 +4907,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["server", "workspace:server"],
             ["body-parser", "npm:1.19.0"],
+            ["cli-jest-reporter", "https://github.com/g2i/cli-jest-reporter.git#commit=0e55a7f575b9f978cad1ae4c8394091718216801"],
             ["cookie-parser", "npm:1.4.5"],
             ["database", "workspace:database"],
             ["express", "npm:4.17.1"],
             ["jest", "virtual:03d23b8db935acb0eadcf2b89acba10457b3561f69777958cef5b4cedbb9ecb1e23e0426275265d835ff76d7fc202d462f6d72f524b27ae6291b54288d009c0a#npm:27.0.6"],
-            ["reporter", "workspace:reporter"],
             ["supertest", "npm:6.1.4"]
           ],
           "linkType": "SOFT",

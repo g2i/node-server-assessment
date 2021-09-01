@@ -7,11 +7,11 @@
   },
   "devDependencies": {
     "jest": "^27.0.6",
-    "reporter": "workspace:reporter",
     "supertest": "^6.1.4"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cli-jest-reporter": "https://github.com/g2i/cli-jest-reporter",
     "cookie-parser": "^1.4.5",
     "database": "workspace:database",
     "express": "^4.17.1"
