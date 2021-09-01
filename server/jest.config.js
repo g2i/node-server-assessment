@@ -3,7 +3,7 @@ module.exports = {
   testEnvironment: 'node',
   reporters: [
     "default",
-    "<rootDir>/../reporter/dist/index.js"
+    "cli-jest-reporter"
   ],
   testPathIgnorePatterns: [
     "/node_modules/",

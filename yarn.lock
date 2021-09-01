@@ -1306,6 +1306,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cli-jest-reporter@https://github.com/g2i/cli-jest-reporter":
+  version: 1.0.0
+  resolution: "cli-jest-reporter@https://github.com/g2i/cli-jest-reporter.git#commit=0e55a7f575b9f978cad1ae4c8394091718216801"
+  checksum: a6ee15954a8307ce16787b8ecb792475df7994b2e58700fc4142b5882259a58bb521484878ed1836085e769add1a0296ff36ce6bffdaa1339633b7548ad7ef2e
+  languageName: node
+  linkType: hard
+
 "cliui@npm:^7.0.2":
   version: 7.0.4
   resolution: "cliui@npm:7.0.4"
@@ -3809,16 +3816,6 @@ fsevents@^2.3.2:
   languageName: node
   linkType: hard
 
-"reporter@workspace:reporter":
-  version: 0.0.0-use.local
-  resolution: "reporter@workspace:reporter"
-  dependencies:
-    "@jest/reporters": ^27.0.6
-    "@types/node": ^16.4.13
-    typescript: ^4.3.5
-  languageName: unknown
-  linkType: soft
-
 "require-directory@npm:^2.1.1":
   version: 2.1.1
   resolution: "require-directory@npm:2.1.1"
@@ -3968,11 +3965,11 @@ resolve@^1.20.0:
   resolution: "server@workspace:server"
   dependencies:
     body-parser: ^1.19.0
+    cli-jest-reporter: "https://github.com/g2i/cli-jest-reporter"
     cookie-parser: ^1.4.5
     database: "workspace:database"
     express: ^4.17.1
     jest: ^27.0.6
-    reporter: "workspace:reporter"
     supertest: ^6.1.4
   languageName: unknown
   linkType: soft

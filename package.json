@@ -9,7 +9,6 @@
   },
   "workspaces": [
     "database",
-    "reporter",
     "server"
   ],
   "packageManager": "yarn@3.0.0",
